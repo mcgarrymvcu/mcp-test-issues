@@ -1,0 +1,13 @@
+Number,Title,Body,Type,State
+1,Forecasting API returns incorrect values for leap years,"The /forecast endpoint fails to account for leap years, causing a one-day offset in projected inventory",Bug,OPEN
+2,Add REST endpoint for Bulk SKU load,Implement a POST /skus/bulk route to allow batch uploading of SKU data via .csv or .json,Enhancement,OPEN
+3,Debounce input oon forecast parameter form,"Rapid changes in the forecasting form (e.g., lead time, demand variability) trigger excessive API calls.  Add debouncing to reduce load.",Enhancement,OPEN
+4,Inventory adjustment fails when quantity is zero,"The  PUT /inventory/:id endpoint rejects payloads when quantity is zero, even though zero is a valid update in certain contexts.",Bug,OPEN
+5,Display confidence levels on forecast chart,Extend the chart.js to show upper and lower confidence bounds around the forecast lline.,Enhancement,OPEN
+6,Add an option for naive forcast,"Give forecasters the option to, at a SKU level, predict that the forecast for the following month is the actual sales for the current month.",Enhancement,OPEN
+7,Enhanced warnings,Display an alert on the forecaster's browser if a manual override exceeds two standard deviatons.  ,Enhancement,OPEN
+8,REST API doesn't return ETag for caching,The GET /inventory/:id response should return ETag headers to support client-side caching and If-None-Match validation.,Bug,OPEN
+9,Detect positive forecast bias,"Create a new report which identifies SKUs that have a sustained positive bias - that is, the forecast has been two standard deviations higher than actual sales for 3 consecutive months.  This report should be limited to class C skus.",Enhancement,OPEN
+10,Remove statistical bias from Class A SKus,Cap the forecasts of class A SKUs to two positive (or negative) standard deviations if the SKU's forecast has 3 or more consecutive months of statistical bias,Enhancement,OPEN
+11,Add API examples for demand overrides,Update the API documentation with examples of how to override forecasted demand using PATCH /forecast/:id,Documentation,OPEN
+12,Need explanation,Need an IT expert to explain the statistical safety stock calculations to the summer interns.,Help wanted,OPEN
